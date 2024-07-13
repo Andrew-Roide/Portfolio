@@ -1,14 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import About from './components/About';
+import ActiveContextProvider from './components/ActiveContext';
 import './App.css'
 
 function App() {
 
 
   return (
-    <Router>
+    <ActiveContextProvider>
       <NavBar />
-    </Router>
+      <About />
+    </ActiveContextProvider>
   )
 }
 
