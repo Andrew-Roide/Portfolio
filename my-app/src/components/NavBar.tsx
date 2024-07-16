@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ActiveContext } from './ActiveContext';
 
-export default function NavBar(){
+export default function NavBar() {
   const context = useContext(ActiveContext);
 
   if (!context) {
@@ -11,13 +11,33 @@ export default function NavBar(){
   const { setActive } = context;
 
   return (
-    <nav>
-      <h1>Andrew John Roide</h1>
+    <nav className="text-customBlue">
       <ul>
-        <li><a href="#about-me" onClick={() => setActive('Section 1')}>About Me</a></li>
-        <li><a href="#projects" onClick={() => setActive('Section 2')}>Projects</a></li>
-        <li><a href="#skills" onClick={() => setActive('Section 3')}>Skills</a></li>
-        <li><a href="#contact-me" onClick={() => setActive('Section 2')}>Contact Me</a></li>
+        <li>
+          <a href="/" onClick={() => setActive("Home")}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/about-me" onClick={() => setActive("About Me")}>
+            About Me
+          </a>
+        </li>
+        <li>
+          <a href="/skills" onClick={() => setActive("Skills")}>
+            Skills
+          </a>
+        </li>
+        <li>
+          <a href="/projects" onClick={() => setActive("Projects")}>
+            Projects
+          </a>
+        </li>
+        <li>
+          <a href="/contact-me" onClick={() => setActive("Section 5")}>
+            Contact Me
+          </a>
+        </li>
       </ul>
     </nav>
   );

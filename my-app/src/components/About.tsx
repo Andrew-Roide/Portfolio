@@ -3,7 +3,8 @@ export default function About() {
 
   return (
     <>
-      <div>
+    <section id="about-me">
+      <div className="text-customGrey">
         <h2>About Me</h2>
         <p>
           What do you get when you combine the expertise of an individual who has been captivated by computers since the age of
@@ -23,6 +24,7 @@ export default function About() {
           with the world of Web Development.
         </p>
       </div>
+    </section>
     </>
   )
 }
