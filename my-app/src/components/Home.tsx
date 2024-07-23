@@ -2,6 +2,7 @@
 export default function Home() {
   return (
     <>
+    <section id="home">
       <div className="flex flex-col h-screen">
         <main className="flex flex-grow items-center justify-center text-center p-4">
           <div className="italic">
@@ -15,6 +16,7 @@ export default function Home() {
           </div>
         </main>
       </div>
+    </section>
     </>
   );
 }

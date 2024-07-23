@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { ActiveContext } from "./ActiveContext";
 
 export default function NavBar() {
@@ -11,52 +13,101 @@ export default function NavBar() {
 
   const { setActive } = context;
 
-  function handleLinkClick(section) {
+  function handleLinkClick(section:any) {
     setActive(section);
     if (isOpen) {
-      setIsOpen(false); // Close the menu after a link is clicked on smaller screens
+      setIsOpen(false);
     }
   }
 
+  const navList = {
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.07,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const navItem = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    hidden: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+  };
+
+  const menuItems = [
+    { label: "Home", section: "Home" },
+    { label: "About Me", section: "About Me" },
+    { label: "Projects", section: "Projects" },
+    { label: "Skills", section: "Skills" },
+    { label: "Contact Me", section: "Contact Me" },
+  ];
+
   return (
     <header className="relative">
-      <nav className="text-customBlue mt-10">
+      <nav className="flex items-center justify-end gap-12 text-customBlue mt-10 px-4">
         {/* Desktop Menu */}
-        <ul className="hidden md:flex justify-end gap-12 text-2xl font-slab font-bold text-shadow-customNav">
-          <li>
-            <a href="#home" onClick={() => handleLinkClick("Home")}>
-              Home
+        <ul className="hidden md:flex gap-12 text-xl font-slab font-bold text-shadow-customNav items-center">
+          {menuItems.map((item) => (
+            <motion.li
+              key={item.section}
+              className="relative"
+              whileHover={{ scale: 1.1, y: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a
+                href={`#${item.section.toLowerCase().replace(/\s+/g, "-")}`}
+                onClick={() => handleLinkClick(item.section)}
+                className="duration-300 whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            </motion.li>
+          ))}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            className="flex justify-center gap-4"
+          >
+            <a href="https://www.linkedin.com/in/andrew-roide/" target="_blank">
+              <div className="relative w-10 h-10 transition bg-customGrey rounded-full hover:scale-110">
+                <FaLinkedinIn className="absolute text-xl top-2.5 left-2.5 text-main" />
+              </div>
             </a>
-          </li>
-          <li>
-            <a href="#about-me" onClick={() => handleLinkClick("About Me")}>
-              About Me
+            <a href="https://github.com/andrew-roide" target="_blank">
+              <div className="relative w-10 h-10 transition bg-white rounded-full hover:scale-110">
+                <FaGithub className="absolute text-xl top-2.5 left-2.5 text-main" />
+              </div>
             </a>
-          </li>
-          <li>
-            <a href="#skills" onClick={() => handleLinkClick("Skills")}>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={() => handleLinkClick("Projects")}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact-me" onClick={() => handleLinkClick("Contact Me")}>
-              Contact Me
-            </a>
-          </li>
+          </motion.div>
         </ul>
 
         {/* Hamburger Button */}
         <button
-          className="md:hidden text-customBlue focus:outline-none "
+          className="md:hidden absolute right-4 top-4 text-customBlue focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
-            className="w-8 h-8"
+            className="w-8 h-8 mb-3"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -70,43 +121,42 @@ export default function NavBar() {
             ></path>
           </svg>
         </button>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden absolute top-16 left-0 shadow-lg rounded-lg px-4 py-6 z-50">
-            <ul className="flex flex-col gap-4 text-xl font-slab font-bold text-customBlue text-shadow-customNav">
-              <li>
-                <a href="#home" onClick={() => handleLinkClick("Home")}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about-me" onClick={() => handleLinkClick("About Me")}>
-                  About Me
-                </a>
-              </li>
-              <li>
-                <a href="#skills" onClick={() => handleLinkClick("Skills")}>
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a href="#projects" onClick={() => handleLinkClick("Projects")}>
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact-me"
-                  onClick={() => handleLinkClick("Contact Me")}
-                >
-                  Contact Me
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="md:hidden fixed top-16 right-0 mx-4 my-6 z-50 w-64"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={navList}
+          >
+            <motion.ul
+              initial="hidden"
+              animate={isOpen ? "visible" : "hidden"}
+              exit="hidden"
+              variants={navList}
+            >
+              {menuItems.map((item) => (
+                <motion.li
+                  key={item.section}
+                  variants={navItem}
+                  className="text-customBlue text-2xl pb-7 font-bold"
+                >
+                  <a
+                    href={`#${item.section.toLowerCase().replace(/\s+/g, "-")}`}
+                    onClick={() => handleLinkClick(item.section)}
+                  >
+                    {item.label}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
