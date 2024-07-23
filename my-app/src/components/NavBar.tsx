@@ -64,7 +64,7 @@ export default function NavBar() {
 
   return (
     <header className="relative">
-      <nav className="flex items-center justify-end gap-12 text-customBlue mt-10 px-4 font-montserrat">
+      <nav className="flex items-center justify-end gap-12 text-customBlue mt-10 px-4 font-orbitron">
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-12 text-xl font-slab font-bold text-shadow-customNav items-center">
           {menuItems.map((item) => (
