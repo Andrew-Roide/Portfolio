@@ -55,7 +55,6 @@ export default function NavBar() {
   };
 
   const menuItems = [
-    { label: "Home", section: "Home" },
     { label: "About Me", section: "About Me" },
     { label: "Projects", section: "Projects" },
     { label: "Skills", section: "Skills" },
