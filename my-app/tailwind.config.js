@@ -9,6 +9,11 @@ export default {
       colors: {
         customBlue: "#4FC3F7",
         customGrey: "#E0E0E0"
+      },
+      fontFamily: {
+        bilbo: ['Bilbo', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif']
       }
     },
   },

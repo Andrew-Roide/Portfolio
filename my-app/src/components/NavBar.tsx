@@ -55,7 +55,6 @@ export default function NavBar() {
   };
 
   const menuItems = [
-    { label: "Home", section: "Home" },
     { label: "About Me", section: "About Me" },
     { label: "Projects", section: "Projects" },
     { label: "Skills", section: "Skills" },
@@ -64,7 +63,7 @@ export default function NavBar() {
 
   return (
     <header className="relative">
-      <nav className="flex items-center justify-end gap-12 text-customBlue mt-10 px-4">
+      <nav className="flex items-center justify-end gap-12 text-customBlue mt-10 px-4 font-orbitron">
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-12 text-xl font-slab font-bold text-shadow-customNav items-center">
           {menuItems.map((item) => (
