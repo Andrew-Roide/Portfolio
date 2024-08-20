@@ -33,7 +33,7 @@ export default function About() {
                     className="mb-4 max-w-full"
                   />
                   <div>
-                    <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold underline">
                       {project.name}
                     </h3>
                     <p className="text-xs sm:text-base md:text-lg my-5 md:my-20">
