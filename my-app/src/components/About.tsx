@@ -10,9 +10,9 @@ export default function About() {
 
 return (
   <>
-    <section id="about-me" ref={aboutRef}>
+    <section id="about-me" ref={aboutRef} className="mb-96">
       <motion.div
-        className="text-customGrey h-[90vh] pt-10"
+        className="text-customGrey pt-10"
         initial={{ opacity: 0, y: 300 }}
         animate={aboutInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.5 }}

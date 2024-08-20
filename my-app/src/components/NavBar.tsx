@@ -87,12 +87,20 @@ export default function NavBar() {
             animate={{ x: 0, opacity: 1 }}
             className="flex justify-center gap-4"
           >
-            <a href="https://www.linkedin.com/in/andrew-roide/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/andrew-roide/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="relative w-10 h-10 transition bg-customGrey rounded-full hover:scale-110">
                 <FaLinkedinIn className="absolute text-xl top-2.5 left-2.5 text-main" />
               </div>
             </a>
-            <a href="https://github.com/andrew-roide" target="_blank">
+            <a
+              href="https://github.com/andrew-roide"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="relative w-10 h-10 transition bg-white rounded-full hover:scale-110">
                 <FaGithub className="absolute text-xl top-2.5 left-2.5 text-main" />
               </div>
