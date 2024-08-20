@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projects } from "../Data";
 
-export default function About() {
+export default function Projects() {
   const { ref: projectRef, inView: projectInView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -10,9 +10,9 @@ export default function About() {
 
   return (
     <>
-      <section id="projects" ref={projectRef}>
+      <section id="projects" ref={projectRef} className="mb-96">
         <motion.div
-          className="text-customGrey h-[90vh] pt-10"
+          className="text-customGrey pt-10"
           initial={{ opacity: 0, y: 300 }}
           animate={projectInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.5 }}
@@ -33,7 +33,7 @@ export default function About() {
                     className="mb-4 max-w-full"
                   />
                   <div>
-                    <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold underline">
                       {project.name}
                     </h3>
                     <p className="text-xs sm:text-base md:text-lg my-5 md:my-20">
@@ -46,7 +46,12 @@ export default function About() {
                           whileHover={{ scale: 1.1, y: -5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <a href={project.live} className="text-customBlue">
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            className="text-customBlue"
+                            rel="noopener noreferrer"
+                          >
                             Live Demo
                           </a>
                         </motion.li>
@@ -56,7 +61,12 @@ export default function About() {
                         whileHover={{ scale: 1.1, y: -5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
-                        <a href={project.code} className="text-customBlue">
+                        <a
+                          href={project.code}
+                          target="_blank"
+                          className="text-customBlue"
+                          rel="noopener noreferrer"
+                        >
                           Source Code
                         </a>
                       </motion.li>

@@ -10,9 +10,9 @@ export default function About() {
 
 return (
   <>
-    <section id="about-me" ref={aboutRef}>
+    <section id="about-me" ref={aboutRef} className="mb-96">
       <motion.div
-        className="text-customGrey h-[90vh] pt-10"
+        className="text-customGrey pt-10"
         initial={{ opacity: 0, y: 300 }}
         animate={aboutInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.5 }}
@@ -20,7 +20,7 @@ return (
         <div className="text-2xl sm:text-3xl md:text-4xl text-end font-bold mb-10 md:mb-20 mr-10 md:mr-40 font-orbitron">
           <h2>About Me</h2>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center border-4 border-solid border-customBlue p-5 md:p-10">
+        <div className="flex flex-col md:flex-row items-center justify-center border-4 border-solid border-customBlue p-5 md:p-40">
           <div className="md:mr-10 mb-5 md:mb-0">
             <img
               src="/images/63313798.png"
