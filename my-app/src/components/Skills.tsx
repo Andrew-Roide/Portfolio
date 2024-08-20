@@ -20,7 +20,7 @@ export default function Skills() {
           <div className="text-2xl sm:text-3xl md:text-4xl text-end font-bold mb-10 md:mb-20 mr-10 md:mr-40 font-orbitron">
             <h2>Skills</h2>
           </div>
-          <div className="flex flex-wrap gap-10 items-center justify-center border-4 border-solid border-customBlue p-5 md:p-10">
+          <div className="flex flex-wrap gap-10 items-center justify-center border-4 border-solid border-customBlue p-5 md:p-40">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
