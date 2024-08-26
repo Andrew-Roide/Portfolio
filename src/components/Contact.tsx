@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import React from "react";
 
 export default function Contact() {
   const { ref: contactRef, inView: contactInView } = useInView({

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { ActiveContext } from "./ActiveContext";
+import React from "react";
 
 export default function NavBar() {
   const context = useContext(ActiveContext);

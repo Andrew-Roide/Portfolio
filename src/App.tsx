@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import ActiveContextProvider from "./components/ActiveContext";
 import ParticleBackground from "./components/ParticleBackground";
 import "./App.css";
+import React from "react";
 
 function App() {
   return (

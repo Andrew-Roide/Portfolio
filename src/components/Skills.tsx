@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { skills } from "../Data";
+import React from "react";
 
 export default function Skills() {
   const { ref: skillsRef, inView: skillsInView } = useInView({

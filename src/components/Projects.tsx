@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projects } from "../Data";
+import React from "react";
 
 export default function Projects() {
   const { ref: projectRef, inView: projectInView } = useInView({
