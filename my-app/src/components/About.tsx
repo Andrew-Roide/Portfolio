@@ -29,24 +29,18 @@ return (
           </div>
           <div className="flex flex-col text-sm sm:text-base md:text-xl ml-5 md:ml-20 font-orbitron leading-relaxed tracking-wider font-medium">
             <p>
-              What do you get when you combine the expertise of an individual
-              who has been captivated by computers since the age of nine with
-              someone with an innate curiosity about the intricacies of how and
-              why things operate or work? Well, hi! I&#39;m
+              Hi, I&#39;m
               <span className="text-customBlue text-lg sm:text-xl md:text-2xl font-bold">
                 {" "}
                 Andrew Roide
               </span>
-              !
+              ! Ever since I can remember, I've been fueled by a deep curiosity
+              about how and why things work. This curiosity has grown into a
+              passion for creating and improving web applications. I&#39;m
+              constantly learning and exploring new technologies, driven by the
+              excitement of turning ideas into functional, impactful websites.
             </p>
             <br />
-            <p>
-              From my childhood days spent unraveling riddles and solving
-              Rubik&#39;s Cubes to tackling various puzzles in the gaming and
-              real world, and even building computers and keyboards, these
-              seemingly small interests have cumulatively shaped my entire life,
-              aligning perfectly with the world of Web Development.
-            </p>
           </div>
         </div>
       </motion.div>
