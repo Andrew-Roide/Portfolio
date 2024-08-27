@@ -25,7 +25,7 @@ return (
         <div className="flex flex-col md:flex-row items-center justify-center border-4 border-solid border-customBlue p-5 md:p-40">
           <div className="md:mr-10 mb-5 md:mb-0">
             <img
-              src="public/images/63313798.png"
+              src="/images/63313798.png"
               className="rounded-full max-w-xs md:max-w-md"
             />
           </div>
